@@ -19,9 +19,7 @@ module.exports = (request, response, next) => {
 
   jwt.verify(token, authConfig.secret, (err, decoded) => {
     if(err) return response.status(401).json({ error: 'Token invalid' });
-
     request.userId = decoded.id;
-
     return next();
   });
 };
