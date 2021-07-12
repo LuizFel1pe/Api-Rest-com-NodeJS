@@ -14,8 +14,8 @@ routes
   .post('/auth/authenticate', authenticatedController.autheticate)
   .post('/auth/forgot_password', recoverPasswordController.forgotMyPassword)
   .post('/auth/reset_password', recoverPasswordController.resetMyPassword)
-  .get('/projects', authMiddleware, projectController.list)
-  .get('/projects/:projectId', authMiddleware, projectController.list)
+  .get('/projects', authMiddleware, projectController.listProjects)
+  .get('/projects/:projectId', authMiddleware, projectController.listProject)
   .post('/projects', authMiddleware, projectController.create)
   .put('/projects/:projectId', authMiddleware, projectController.update)
   .delete('/projects/:projectId', authMiddleware, projectController.delete);
